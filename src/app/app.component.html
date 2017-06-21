@@ -1,21 +1,11 @@
 <body>
-  
-<p>This is a paragraph</p>
-<div class="row">
-  <div *ngFor="let number of number_data" class="column">
-    <div class="card">
-      <div class="card-section">
-          <a href="{{link(number)}}">
-            <h4>{{number.title}}</h4>
-          </a>
-      </div>
-      <div *ngIf="number.source">
-        <img src="{{number.source}}"/>
-      </div>
-      <div class="card-section">
-          <p>{{number.description}}</p>
-      </div>
-      </div>
-  </div>
-</div>
+  <app-root>
+    <app-search>
+
+    </app-search>
+  </app-root>
+
+  <!--<app-results>
+
+  </app-results>-->
 </body>
