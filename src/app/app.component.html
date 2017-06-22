@@ -1,11 +1,16 @@
 <body>
-  <app-root>
-    <app-search>
-
-    </app-search>
-  </app-root>
-
-  <!--<app-results>
-
-  </app-results>-->
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <strong>Wiki Search</strong>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="text" [(ngModel)]="searchTerm" placeholder="Search"></li>
+        <li><button type="button" (click)="search()" class="button">Search</button></li>
+      </ul>
+    </div>
+  </div>
+  <app-results>
+    
+  </app-results>
 </body>
