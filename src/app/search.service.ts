@@ -32,6 +32,11 @@ export class SearchService {
                 description,
                 source
               }
+          })
+          .filter(entry => {
+            if (!entry.description.includes("may refer to")) {
+              return entry;
+            }
           });
         });
   }
