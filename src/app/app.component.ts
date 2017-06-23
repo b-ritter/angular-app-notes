@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from './search.service';
+import '../styles.scss';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss','../styles.scss'],
+  styleUrls: ['./app.component.scss'],
   providers: [SearchService]
 })
 
