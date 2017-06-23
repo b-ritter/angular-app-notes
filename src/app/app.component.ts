@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from './search.service';
+import { SearchService }     from './search.service';
+import { Router }            from '@angular/router';
+
 import '../styles.scss';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [SearchService]
+  styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   searchTerm: string;
 
-  constructor(private searchService: SearchService) {
-    this.searchTerm
+  constructor(private router: Router) {
+    
   }
 
-  ngOnInit() {
-  }
-
-  search() {
-    this.searchService.search(this.searchTerm);
+  search(): void {
+    this.router.navigate(['/search', this.searchTerm])
   }
 }

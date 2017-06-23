@@ -5,12 +5,10 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><input type="text" [(ngModel)]="searchTerm" placeholder="Search"></li>
+        <li><input type="text" [(ngModel)]="searchTerm" placeholder="Search" value="Imaginary"></li>
         <li><button type="button" (click)="search()" class="button">Search</button></li>
       </ul>
     </div>
   </div>
-  <app-results>
-    
-  </app-results>
+  <router-outlet></router-outlet>
 </body>

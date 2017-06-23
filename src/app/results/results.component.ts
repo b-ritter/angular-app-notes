@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { SearchService } from '../search.service';
+import { Component, OnInit } from '@angular/core';
+import { SearchService }            from '../search.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location }               from '@angular/common';
 
 @Component({
   selector: 'app-results',
@@ -8,15 +10,19 @@ import { SearchService } from '../search.service';
   providers: [SearchService]
 })
 export class ResultsComponent implements OnInit{
-  results: object;
-  constructor(private searchService: SearchService) {
-    this.results;
+  results
+  constructor(
+    private searchService: SearchService,
+    private route: ActivatedRoute,
+    private location: Location
+    ) {
   }
 
   ngOnInit() {
-    this.searchService.search('imaginary')
-    .then(results => {
-      this.results = results;
-    });
+    this.route.params.subscribe(params => {
+      this.searchService.search(params['term'])
+      .subscribe(results => this.results = results);
+    })
   }
+
 }

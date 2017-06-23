@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http }       from '@angular/http';
+import { Observable }     from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class SearchService {
   baseUrl: string = 'https://en.wikipedia.org/api/rest_v1/page/related/';
+  constructor(private http: Http) {
+    
+  }
 
-  constructor(private http: Http) { }
-
-  search(term: string): Promise<object> {
+  search(term: string): Observable<object[]>{
     return this.http
         .get(this.baseUrl + term)
-        .toPromise()
-        .then(res => {
+        // .toPromise()
+        .map(res => {
           const wiki_data = res.json();
           return Object.entries(wiki_data.pages).map(
             ([key, value])=>{
