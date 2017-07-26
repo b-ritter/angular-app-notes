@@ -3,20 +3,18 @@
     <h2>Results</h2>
   </div>
 </div>
-<div class="row">
-  <div *ngFor="let entry of results" class="column small-12 medium-4">
-    <div class="card">
-      <div class="card-section">
-          <!--<a href="{{link(entry)}}">-->
-            <h4>{{entry.title}}</h4>
-          <!--</a>-->
-      </div>
-      <div *ngIf="entry.source">
-        <img src="{{entry.source}}"/>
-      </div>
-      <div class="card-section">
-          <p>{{entry.description}}</p>
-      </div>
-      </div>
-  </div>
+<div *ngFor="let entry of results" class="card-columns">
+  <div class="card">
+    <div class="card-section">
+        <!--<a href="{{link(entry)}}">-->
+          <h4>{{entry.title}}</h4>
+        <!--</a>-->
+    </div>
+    <div *ngIf="entry.source">
+      <img src="{{entry.source}}"/>
+    </div>
+    <div class="card-section">
+        <p>{{entry.description}}</p>
+    </div>
+    </div>
 </div>

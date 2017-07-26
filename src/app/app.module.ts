@@ -5,6 +5,7 @@ import { HttpModule }       from '@angular/http';
 import { RouterModule }     from '@angular/router';
 import { AppComponent }     from './app.component';
 import { ResultsComponent } from './results/results.component';
+import { ClarityModule } from "clarity-angular";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ResultsComponent } from './results/results.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    ClarityModule.forRoot(),
     RouterModule.forRoot([
       {
         path: '',

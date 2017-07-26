@@ -1,14 +1,18 @@
 <body>
-  <div class="top-bar">
-    <div class="top-bar-title">
-      <strong>Wiki Search</strong>
-    </div>
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li><input type="text" [(ngModel)]="searchTerm" placeholder="Search" value="Imaginary"></li>
-        <li><button type="button" (click)="search()" class="button">Search</button></li>
-      </ul>
-    </div>
+  <div class="main-container">
+    <header class="header-6">
+        <div class="branding">
+            <a href="..." class="nav-link">
+                <span class="title">Wiki Search</span>
+            </a>
+        </div>
+        <form class="search">
+            <label for="search_input">
+              <input type="text" [(ngModel)]="searchTerm" placeholder="Search" value="Imaginary">
+              <button type="button" (click)="search()" class="button">Search</button>
+            </label>
+        </form>
+    </header>
   </div>
   <router-outlet></router-outlet>
 </body>
