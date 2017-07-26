@@ -8,11 +8,15 @@
         </div>
         <form class="search">
             <label for="search_input">
-              <input type="text" [(ngModel)]="searchTerm" placeholder="Search" value="Imaginary">
-              <button type="button" (click)="search()" class="button">Search</button>
+              <input type="text" [(ngModel)]="searchTerm" name="wikiSearch" placeholder="Search" value="Imaginary">
             </label>
         </form>
     </header>
+    <div class="content-container">
+      <div class="content-area">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
-  <router-outlet></router-outlet>
+  
 </body>
